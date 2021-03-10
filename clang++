@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-~/code/opencilk-project/build/bin/clang++ $@
+~/code/opencilk/opencilk-project/build/bin/clang++ $@

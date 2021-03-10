@@ -1,21 +1,27 @@
-using namespace std;
 #include <vector>
 #include <cilk/cilk.h>
+#include <iostream>
 
-int functionwithuniquename(vector<int> v) {
+int functionwithuniquename() {
     int sum = 0;
     /*for (auto x : v) {
         sum += x;
     }*/
-    cilk_for (int i = 0; i < 2; i++) {
-        sum += v[i];
+    cilk_for (int i = 0; i < 1000; i++) {
+	    sum += i;
     }
-    return sum;
+    return 0;
 }
 
 int main()
 {
-    int x = functionwithuniquename({1,2});
+	std::vector<int> v;
+    for(int i = 0; i<100; i++){
+    	v.push_back(i);
+    }
+    int x = functionwithuniquename();
+
+    std::cout << x << std::endl;
 
     return 0;
 }
